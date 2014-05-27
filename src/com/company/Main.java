@@ -9,7 +9,9 @@ public class Main {
         }
 
         for (int i=0;i<5;i++)   {
-            new PriorityThread(resource, i).start();
+            Thread t = new NormalThread(resource, i);
+            resource.register(t);
+            t.start();
         }
     }
 }
